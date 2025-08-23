@@ -1,16 +1,16 @@
 /* Nouvelle charte graphique pour SAS CLEANER MULTISERVICES */
-/* Couleurs : Orange et Vert avec dégradés élégants */
+/* Couleurs : Orange, Noir et Marron foncé */
 
 /* Couleurs principales */
 :root {
   --primary-color: #FF6B35; /* Orange vif */
-  --secondary-color: #00C851; /* Vert émeraude */
+  --secondary-color: #8B4513; /* Marron selle */
   --accent-color: #FF8C42; /* Orange plus clair */
-  --dark-color: #2C2C2C; /* Gris très foncé */
+  --dark-color: #1A1A1A; /* Noir profond */
   --light-color: #FFFFFF; /* Blanc pur */
-  --success-color: #00C851; /* Vert pour les succès */
-  --warning-color: #FF6B35; /* Orange pour les avertissements */
-  --danger-color: #FF4500; /* Orange rouge pour les dangers */
+  --success-color: #FF6B35; /* Orange pour les succès */
+  --warning-color: #FF8C42; /* Orange clair pour les avertissements */
+  --danger-color: #8B0000; /* Rouge foncé pour les dangers */
   --text-color: #2C2C2C; /* Texte principal - gardé original */
   --text-light: #666666; /* Texte secondaire - gardé original */
 }
@@ -47,20 +47,20 @@
   box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4) !important;
 }
 
-/* Boutons verts */
+/* Boutons secondaires (remplace les verts) */
 .grve-btn.grve-bg-secondary,
 .grve-btn.grve-bg-success {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, #00A844 100%) !important;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #654321 100%) !important;
   border: none !important;
-  box-shadow: 0 4px 15px rgba(0, 200, 81, 0.3) !important;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3) !important;
   transition: all 0.3s ease !important;
 }
 
 .grve-btn.grve-bg-secondary:hover,
 .grve-btn.grve-bg-success:hover {
-  background: linear-gradient(135deg, #00A844 0%, var(--secondary-color) 100%) !important;
+  background: linear-gradient(135deg, #654321 0%, var(--secondary-color) 100%) !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(0, 200, 81, 0.4) !important;
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4) !important;
 }
 
 /* En-tête avec dégradé */
@@ -90,9 +90,9 @@
 }
 
 .grve-menu-type-button.grve-primary-2 {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, #00A844 100%) !important;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #654321 100%) !important;
   border: none !important;
-  box-shadow: 0 3px 10px rgba(0, 200, 81, 0.3) !important;
+  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.3) !important;
 }
 
 .grve-menu-type-button:hover {
@@ -100,13 +100,13 @@
   box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4) !important;
 }
 
-/* Sections avec dégradés de fond */
+/* Sections avec dégradés de fond - Remplace les verts */
 .grve-with-bg-color[style*="background-color:#01a7e1"] {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
 }
 
 .grve-with-bg-color[style*="background-color:#00c851"] {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, #00A844 100%) !important;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #654321 100%) !important;
 }
 
 /* Pied de page avec dégradé */
@@ -114,9 +114,9 @@
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
 }
 
-/* Callout section avec dégradé */
+/* Callout section avec dégradé - Remplace les verts */
 .grve-callout .grve-column-wrapper[style*="background-color:#00c851"] {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, #00A844 100%) !important;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #654321 100%) !important;
 }
 
 /* Icônes avec couleurs */
@@ -199,4 +199,27 @@
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
   border: none !important;
   box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3) !important;
+}
+
+/* Suppression de toutes les couleurs vertes */
+.grve-bg-success,
+.grve-text-success,
+.grve-border-success {
+  background-color: var(--secondary-color) !important;
+  color: var(--light-color) !important;
+  border-color: var(--secondary-color) !important;
+}
+
+/* Remplacement des couleurs vertes par marron */
+[style*="background-color:#00c851"],
+[style*="background-color:#00A844"],
+[style*="background-color:#27AE60"] {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #654321 100%) !important;
+}
+
+/* Couleurs de texte pour remplacer les verts */
+.grve-text-success,
+[style*="color:#00c851"],
+[style*="color:#00A844"] {
+  color: var(--secondary-color) !important;
 }
