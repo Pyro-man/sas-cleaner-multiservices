@@ -1,155 +1,202 @@
 /* Nouvelle charte graphique pour SAS CLEANER MULTISERVICES */
+/* Couleurs : Orange et Vert avec dégradés élégants */
 
 /* Couleurs principales */
 :root {
-  --primary-color: #2E8B57; /* Vert forêt */
-  --secondary-color: #4682B4; /* Bleu acier */
-  --accent-color: #FF6B35; /* Orange vif */
-  --dark-color: #2C3E50; /* Bleu foncé */
-  --light-color: #ECF0F1; /* Gris clair */
-  --success-color: #27AE60; /* Vert succès */
-  --warning-color: #F39C12; /* Orange avertissement */
-  --danger-color: #E74C3C; /* Rouge danger */
+  --primary-color: #FF6B35; /* Orange vif */
+  --secondary-color: #00C851; /* Vert émeraude */
+  --accent-color: #FF8C42; /* Orange plus clair */
+  --dark-color: #2C2C2C; /* Gris très foncé */
+  --light-color: #FFFFFF; /* Blanc pur */
+  --success-color: #00C851; /* Vert pour les succès */
+  --warning-color: #FF6B35; /* Orange pour les avertissements */
+  --danger-color: #FF4500; /* Orange rouge pour les dangers */
+  --text-color: #2C2C2C; /* Texte principal - gardé original */
+  --text-light: #666666; /* Texte secondaire - gardé original */
 }
 
-/* Modification des couleurs principales du thème */
-body {
-  --wp--preset--color--primary-1: var(--primary-color);
-  --wp--preset--color--primary-2: var(--secondary-color);
-  --wp--preset--color--primary-3: var(--light-color);
-  --wp--preset--color--primary-4: var(--accent-color);
-  --wp--preset--color--primary-5: var(--dark-color);
-  --wp--preset--color--primary-6: var(--dark-color);
+/* Logo texte stylisé */
+.grve-logo-text .grve-item {
+  font-size: 24px !important;
+  font-weight: bold !important;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  letter-spacing: 1px;
 }
 
-/* En-tête */
+/* Boutons avec dégradés */
+.grve-btn.grve-bg-primary-1,
+.grve-btn.grve-bg-primary-2,
+.grve-btn.grve-bg-primary-3,
+.grve-btn.grve-bg-primary-4 {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.grve-btn.grve-bg-primary-1:hover,
+.grve-btn.grve-bg-primary-2:hover,
+.grve-btn.grve-bg-primary-3:hover,
+.grve-btn.grve-bg-primary-4:hover {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4) !important;
+}
+
+/* Boutons verts */
+.grve-btn.grve-bg-secondary,
+.grve-btn.grve-bg-success {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #00A844 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 200, 81, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.grve-btn.grve-bg-secondary:hover,
+.grve-btn.grve-bg-success:hover {
+  background: linear-gradient(135deg, #00A844 0%, var(--secondary-color) 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0, 200, 81, 0.4) !important;
+}
+
+/* En-tête avec dégradé */
 #grve-main-header {
-  background-color: var(--primary-color) !important;
+  background: linear-gradient(135deg, var(--light-color) 0%, #f8f9fa 100%) !important;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) 1;
 }
 
-#grve-main-header .grve-logo-text a,
-#grve-main-header .grve-horizontal-menu:not(.grve-menu-element) > .grve-menu > li > .grve-link-wrapper a,
-#grve-main-header .grve-header-elements .grve-header-element > a {
-  color: white !important;
+/* Menu principal avec couleurs */
+.grve-menu > li > .grve-link-wrapper > a {
+  color: var(--text-color) !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
 }
 
-#grve-main-header .grve-logo-text a:hover,
-#grve-main-header .grve-horizontal-menu:not(.grve-menu-element) > .grve-menu > li:hover > .grve-link-wrapper a {
-  color: var(--accent-color) !important;
+.grve-menu > li > .grve-link-wrapper > a:hover {
+  color: var(--primary-color) !important;
+  transform: translateY(-1px) !important;
 }
 
-/* Barre supérieure */
-#grve-top-bar .grve-top-bar-section {
-  background-color: var(--dark-color) !important;
+/* Boutons de menu avec dégradés */
+.grve-menu-type-button.grve-primary-1 {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
+  border: none !important;
+  box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3) !important;
 }
 
-#grve-top-bar a {
-  color: white !important;
+.grve-menu-type-button.grve-primary-2 {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #00A844 100%) !important;
+  border: none !important;
+  box-shadow: 0 3px 10px rgba(0, 200, 81, 0.3) !important;
 }
 
-#grve-top-bar a:hover {
-  color: var(--accent-color) !important;
+.grve-menu-type-button:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4) !important;
 }
 
-/* Boutons */
-.grve-btn,
-.wp-block-button__link,
-input[type="submit"] {
-  background-color: var(--primary-color) !important;
-  color: white !important;
+/* Sections avec dégradés de fond */
+.grve-with-bg-color[style*="background-color:#01a7e1"] {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
 }
 
-.grve-btn:hover,
-.wp-block-button__link:hover,
-input[type="submit"]:hover {
-  background-color: var(--accent-color) !important;
+.grve-with-bg-color[style*="background-color:#00c851"] {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #00A844 100%) !important;
 }
 
-/* Liens */
-a {
+/* Pied de page avec dégradé */
+#grve-footer .grve-with-bg-gradient {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+}
+
+/* Callout section avec dégradé */
+.grve-callout .grve-column-wrapper[style*="background-color:#00c851"] {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #00A844 100%) !important;
+}
+
+/* Icônes avec couleurs */
+.grve-wrapper-icon.grve-text-primary-1,
+.grve-wrapper-icon.grve-text-primary-2,
+.grve-wrapper-icon.grve-text-primary-3,
+.grve-wrapper-icon.grve-text-primary-4 {
   color: var(--primary-color) !important;
 }
 
-a:hover {
+/* Titres avec couleurs */
+.grve-text-primary-1,
+.grve-text-primary-2,
+.grve-text-primary-3,
+.grve-text-primary-4 {
+  color: var(--primary-color) !important;
+}
+
+/* Liens avec couleurs */
+.grve-link-primary-1,
+.grve-link-primary-2,
+.grve-link-primary-3,
+.grve-link-primary-4 {
+  color: var(--primary-color) !important;
+}
+
+.grve-link-primary-1:hover,
+.grve-link-primary-2:hover,
+.grve-link-primary-3:hover,
+.grve-link-primary-4:hover {
   color: var(--accent-color) !important;
 }
 
-/* Titres */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--dark-color) !important;
+/* Formulaires avec style */
+.grve-form input[type="submit"],
+.grve-form button[type="submit"] {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
+  transition: all 0.3s ease !important;
 }
 
-/* Pied de page */
-#grve-footer {
-  background-color: var(--dark-color) !important;
-  color: white !important;
+.grve-form input[type="submit"]:hover,
+.grve-form button[type="submit"]:hover {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4) !important;
 }
 
-#grve-footer a {
-  color: var(--light-color) !important;
+/* Animations et effets */
+.grve-animated-item {
+  transition: all 0.3s ease !important;
 }
 
-#grve-footer a:hover {
-  color: var(--accent-color) !important;
+.grve-animated-item:hover {
+  transform: translateY(-3px) !important;
 }
 
-/* Navigation */
-.grve-header-menu .grve-label.grve-bg-default {
-  background-color: var(--accent-color) !important;
-}
-
-/* Sections de contenu */
-.grve-section.grve-fullwidth-background {
-  background-color: var(--light-color) !important;
-}
-
-/* Cartes et éléments */
-.grve-portfolio-item,
-.grve-blog-item {
-  border-color: var(--light-color) !important;
-}
-
-.grve-portfolio-item:hover,
-.grve-blog-item:hover {
-  border-color: var(--accent-color) !important;
-}
-
-/* Formulaires */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea,
-select {
-  border-color: var(--light-color) !important;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-textarea:focus,
-select:focus {
-  border-color: var(--primary-color) !important;
-}
-
-/* Messages */
-.wpcf7-mail-sent-ok {
-  background-color: var(--success-color) !important;
-  color: white !important;
-}
-
-.wpcf7-validation-errors {
-  background-color: var(--danger-color) !important;
-  color: white !important;
-}
-
-/* Responsive */
-@media only screen and (max-width: 767px) {
-  #grve-main-responsive-header {
-    background-color: var(--primary-color) !important;
+/* Responsive design */
+@media (max-width: 768px) {
+  .grve-logo-text .grve-item {
+    font-size: 18px !important;
   }
   
-  #grve-main-responsive-header .grve-logo-text a,
-  #grve-main-responsive-header .grve-header-elements .grve-header-element > a {
-    color: white !important;
+  .grve-btn {
+    padding: 12px 20px !important;
+    font-size: 14px !important;
   }
+}
+
+/* Effets de survol pour les cartes */
+.grve-column-wrapper:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Style pour les labels et badges */
+.grve-label.grve-bg-primary-1 {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3) !important;
 }
