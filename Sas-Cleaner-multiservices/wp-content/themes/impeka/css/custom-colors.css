@@ -1,225 +1,23 @@
-/* Nouvelle charte graphique pour SAS CLEANER MULTISERVICES */
-/* Couleurs : Orange, Noir et Marron foncé */
+/* Styles pour SAS CLEANER MULTISERVICES */
 
-/* Couleurs principales */
-:root {
-  --primary-color: #FF6B35; /* Orange vif */
-  --secondary-color: #8B4513; /* Marron selle */
-  --accent-color: #FF8C42; /* Orange plus clair */
-  --dark-color: #1A1A1A; /* Noir profond */
-  --light-color: #FFFFFF; /* Blanc pur */
-  --success-color: #FF6B35; /* Orange pour les succès */
-  --warning-color: #FF8C42; /* Orange clair pour les avertissements */
-  --danger-color: #8B0000; /* Rouge foncé pour les dangers */
-  --text-color: #2C2C2C; /* Texte principal - gardé original */
-  --text-light: #666666; /* Texte secondaire - gardé original */
-}
-
-/* Logo texte stylisé */
+/* Logo texte stylisé - BLANC, EXTRA GRAS, POLICE FANTASTIQUE */
 .grve-logo-text .grve-item {
+  color: #FFFFFF !important;
+  font-weight: 900 !important; /* Extra gras */
   font-size: 24px !important;
-  font-weight: bold !important;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: none;
-  letter-spacing: 1px;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  font-family: 'Orbitron', 'Audiowide', 'Russo One', 'Bungee', 'Righteous', 'Fredoka One', 'Bangers', 'Permanent Marker', 'Rock Salt', 'Satisfy', 'Pacifico', 'Dancing Script', 'Great Vibes', 'Lobster', 'Bebas Neue', 'Anton', 'Teko', 'Oswald', 'Roboto Condensed', 'Impact', 'Arial Black', 'Helvetica Black', 'Verdana', sans-serif !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
 }
 
-/* Boutons avec dégradés */
-.grve-btn.grve-bg-primary-1,
-.grve-btn.grve-bg-primary-2,
-.grve-btn.grve-bg-primary-3,
-.grve-btn.grve-bg-primary-4 {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
-  border: none !important;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
-  transition: all 0.3s ease !important;
-}
-
-.grve-btn.grve-bg-primary-1:hover,
-.grve-btn.grve-bg-primary-2:hover,
-.grve-btn.grve-bg-primary-3:hover,
-.grve-btn.grve-bg-primary-4:hover {
-  background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4) !important;
-}
-
-/* Boutons secondaires (remplace les verts) */
-.grve-btn.grve-bg-secondary,
-.grve-btn.grve-bg-success {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, #654321 100%) !important;
-  border: none !important;
-  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3) !important;
-  transition: all 0.3s ease !important;
-}
-
-.grve-btn.grve-bg-secondary:hover,
-.grve-btn.grve-bg-success:hover {
-  background: linear-gradient(135deg, #654321 0%, var(--secondary-color) 100%) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4) !important;
-}
-
-/* En-tête avec dégradé */
-#grve-main-header {
-  background: linear-gradient(135deg, var(--light-color) 0%, #f8f9fa 100%) !important;
-  border-bottom: 3px solid;
-  border-image: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) 1;
-}
-
-/* Menu principal avec couleurs */
-.grve-menu > li > .grve-link-wrapper > a {
-  color: var(--text-color) !important;
-  font-weight: 600 !important;
-  transition: all 0.3s ease !important;
-}
-
-.grve-menu > li > .grve-link-wrapper > a:hover {
-  color: var(--primary-color) !important;
-  transform: translateY(-1px) !important;
-}
-
-/* Boutons de menu avec dégradés */
-.grve-menu-type-button.grve-primary-1 {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
-  border: none !important;
-  box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3) !important;
-}
-
-.grve-menu-type-button.grve-primary-2 {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, #654321 100%) !important;
-  border: none !important;
-  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.3) !important;
-}
-
-.grve-menu-type-button:hover {
-  transform: translateY(-1px) !important;
-  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4) !important;
-}
-
-/* Sections avec dégradés de fond - Remplace les verts */
-.grve-with-bg-color[style*="background-color:#01a7e1"] {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
-}
-
-.grve-with-bg-color[style*="background-color:#00c851"] {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, #654321 100%) !important;
-}
-
-/* Pied de page avec dégradé */
-#grve-footer .grve-with-bg-gradient {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
-}
-
-/* Callout section avec dégradé - Remplace les verts */
-.grve-callout .grve-column-wrapper[style*="background-color:#00c851"] {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, #654321 100%) !important;
-}
-
-/* Icônes avec couleurs */
-.grve-wrapper-icon.grve-text-primary-1,
-.grve-wrapper-icon.grve-text-primary-2,
-.grve-wrapper-icon.grve-text-primary-3,
-.grve-wrapper-icon.grve-text-primary-4 {
-  color: var(--primary-color) !important;
-}
-
-/* Titres avec couleurs */
-.grve-text-primary-1,
-.grve-text-primary-2,
-.grve-text-primary-3,
-.grve-text-primary-4 {
-  color: var(--primary-color) !important;
-}
-
-/* Liens avec couleurs */
-.grve-link-primary-1,
-.grve-link-primary-2,
-.grve-link-primary-3,
-.grve-link-primary-4 {
-  color: var(--primary-color) !important;
-}
-
-.grve-link-primary-1:hover,
-.grve-link-primary-2:hover,
-.grve-link-primary-3:hover,
-.grve-link-primary-4:hover {
-  color: var(--accent-color) !important;
-}
-
-/* Formulaires avec style */
-.grve-form input[type="submit"],
-.grve-form button[type="submit"] {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
-  border: none !important;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
-  transition: all 0.3s ease !important;
-}
-
-.grve-form input[type="submit"]:hover,
-.grve-form button[type="submit"]:hover {
-  background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4) !important;
-}
-
-/* Animations et effets */
-.grve-animated-item {
-  transition: all 0.3s ease !important;
-}
-
-.grve-animated-item:hover {
-  transform: translateY(-3px) !important;
-}
-
-/* Responsive design */
+/* Responsive design pour le logo */
 @media (max-width: 768px) {
   .grve-logo-text .grve-item {
     font-size: 18px !important;
   }
-  
-  .grve-btn {
-    padding: 12px 20px !important;
-    font-size: 14px !important;
-  }
-}
-
-/* Effets de survol pour les cartes */
-.grve-column-wrapper:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
-  transition: all 0.3s ease !important;
-}
-
-/* Style pour les labels et badges */
-.grve-label.grve-bg-primary-1 {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%) !important;
-  border: none !important;
-  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3) !important;
-}
-
-/* Suppression de toutes les couleurs vertes */
-.grve-bg-success,
-.grve-text-success,
-.grve-border-success {
-  background-color: var(--secondary-color) !important;
-  color: var(--light-color) !important;
-  border-color: var(--secondary-color) !important;
-}
-
-/* Remplacement des couleurs vertes par marron */
-[style*="background-color:#00c851"],
-[style*="background-color:#00A844"],
-[style*="background-color:#27AE60"] {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, #654321 100%) !important;
-}
-
-/* Couleurs de texte pour remplacer les verts */
-.grve-text-success,
-[style*="color:#00c851"],
-[style*="color:#00A844"] {
-  color: var(--secondary-color) !important;
 }
