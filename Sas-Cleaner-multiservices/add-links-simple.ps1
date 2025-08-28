@@ -1,0 +1,61 @@
+# Script simple pour ajouter les liens Transport et Déménagement
+# Approche différente : chercher la fin du menu et insérer avant
+
+# Liens à ajouter
+$transportLink = '<li id="menu-item-2002" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2002"><div class="grve-link-wrapper"><a href="service/transport-marchandises/index.html"><span class="grve-item">Transport de Marchandises</span></a></div></li>'
+$demenagementLink = '<li id="menu-item-2004" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2004"><div class="grve-link-wrapper"><a href="service/demenagement/index.html"><span class="grve-item">Services de Déménagement</span></a></div></li>'
+
+# Liens pour sous-dossiers
+$transportLinkSubdir = '<li id="menu-item-2002" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2002"><div class="grve-link-wrapper"><a href="../service/transport-marchandises/index.html"><span class="grve-item">Transport de Marchandises</span></a></div></li>'
+$demenagementLinkSubdir = '<li id="menu-item-2004" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2004"><div class="grve-link-wrapper"><a href="../service/demenagement/index.html"><span class="grve-item">Services de Déménagement</span></a></div></li>'
+
+function Add-LinksToFile {
+    param($filePath)
+    
+    $content = Get-Content $filePath -Raw -Encoding UTF8
+    
+    # Vérifier si les liens existent déjà
+    if ($content -match "Transport de Marchandises" -or $content -match "Services de Déménagement") {
+        Write-Host "Liens déjà présents dans $filePath - Ignoré"
+        return $false
+    }
+    
+    # Déterminer les liens à ajouter
+    $isSubdir = $filePath -match "\\[^\\]+\\index\.html$"
+    if ($isSubdir) {
+        $linksToAdd = $transportLinkSubdir + $demenagementLinkSubdir
+    } else {
+        $linksToAdd = $transportLink + $demenagementLink
+    }
+    
+    # Chercher la fin du menu principal (avant la fermeture de </ul>)
+    # Pattern : chercher </ul> suivi de </div></li> plusieurs fois
+    $pattern = '</ul></div></li></ul></div></li>'
+    
+    if ($content -match $pattern) {
+        $newContent = $content -replace $pattern, $linksToAdd + $pattern
+        Set-Content $filePath $newContent -Encoding UTF8
+        Write-Host "Liens ajoutés à $filePath"
+        return $true
+    } else {
+        Write-Host "Pattern non trouvé dans $filePath"
+        return $false
+    }
+}
+
+# Traiter les fichiers
+$htmlFiles = Get-ChildItem -Path "." -Filter "index.html" -Recurse
+$updatedCount = 0
+$totalCount = 0
+
+foreach ($file in $htmlFiles) {
+    $totalCount++
+    if (Add-LinksToFile $file.FullName) {
+        $updatedCount++
+    }
+}
+
+Write-Host "`nRésumé :"
+Write-Host "Fichiers traités : $totalCount"
+Write-Host "Fichiers mis à jour : $updatedCount"
+Write-Host "Fichiers ignorés : $($totalCount - $updatedCount)"
